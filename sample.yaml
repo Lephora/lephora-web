@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Terence Api
+  description: Terence Api
+  version: 0.0.1
+servers:
+  - url: 'http://lephora/api'
+paths:
+  /hello:
+    get:
+      operationId: 'hello_world'
+      responses:
+        200:
+          description: 'hello world success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello'
+components:
+  schemas:
+    Hello:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: 'world'
+
